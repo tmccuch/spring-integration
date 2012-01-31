@@ -178,7 +178,7 @@
 							</xsd:documentation>
 						</xsd:annotation>
 					</xsd:attribute>
-					<xsd:attribute name="channel" type="xsd:string" use="required">
+					<xsd:attribute name="channel" type="xsd:string">
 						<xsd:annotation>
 							<xsd:appinfo>
 								<xsd:documentation>
@@ -186,7 +186,7 @@
 									sent.
 								</xsd:documentation>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+									<tool:expected-type type="org.springframework.integration.MessageChannel" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -267,7 +267,7 @@
 						</xsd:annotation>
 					</xsd:attribute>
 					<xsd:attribute name="id" type="xsd:string" use="optional"/>
-					<xsd:attribute name="channel" type="xsd:string" use="required">
+					<xsd:attribute name="channel" type="xsd:string">
 						<xsd:annotation>
 							<xsd:appinfo>
 								<xsd:documentation>
@@ -277,7 +277,7 @@
 									to be executed.
 								</xsd:documentation>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+									<tool:expected-type type="org.springframework.integration.MessageChannel" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -410,7 +410,7 @@
 						    </xsd:documentation>
 							<xsd:appinfo>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+									<tool:expected-type type="org.springframework.integration.MessageChannel" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -423,7 +423,7 @@
 						    </xsd:documentation>
 							<xsd:appinfo>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+									<tool:expected-type type="org.springframework.integration.MessageChannel" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -681,7 +681,7 @@
 					</xsd:appinfo>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="channel" type="xsd:string" use="required">
+			<xsd:attribute name="channel" type="xsd:string">
 				<xsd:annotation>
 					<xsd:appinfo>
 						<xsd:documentation>
@@ -692,7 +692,7 @@
 						</xsd:documentation>
 						<tool:annotation kind="ref">
 							<tool:expected-type
-								type="org.springframework.integration.core.MessageChannel" />
+								type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -909,7 +909,7 @@
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
 							<tool:expected-type
-								type="org.springframework.integration.core.MessageChannel" />
+								type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -923,7 +923,7 @@
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
 							<tool:expected-type
-								type="org.springframework.integration.core.MessageChannel" />
+								type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -1096,7 +1096,7 @@
                     <xsd:union memberTypes="xsd:boolean xsd:string" />
                 </xsd:simpleType>
             </xsd:attribute>
-			<xsd:attribute name="channel" type="xsd:string" use="required">
+			<xsd:attribute name="channel" type="xsd:string">
 				<xsd:annotation>
 					<xsd:documentation>
 						Channel to which polled messages will be send. If the stored
@@ -1106,7 +1106,7 @@
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
 							<tool:expected-type
-								type="org.springframework.integration.core.MessageChannel" />
+								type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>

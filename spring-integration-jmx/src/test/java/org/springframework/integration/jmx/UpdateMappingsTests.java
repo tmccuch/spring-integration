@@ -13,61 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.springframework.integration.jmx;
 
-package org.springframework.integration.jmx.config;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.integration.Message;
 import org.springframework.integration.MessageChannel;
 import org.springframework.integration.core.PollableChannel;
-import org.springframework.integration.endpoint.SourcePollingChannelAdapter;
-import org.springframework.integration.test.util.TestUtils;
+import org.springframework.integration.message.GenericMessage;
+import org.springframework.integration.support.MessageBuilder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * @author Mark Fisher
  * @author Gary Russell
- * @since 2.0
+ * @since 2.1
+ *
  */
 @ContextConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-public class AttributePollingChannelAdapterParserTests {
+public class UpdateMappingsTests {
 
 	@Autowired
-	private PollableChannel channel;
+	private MessageChannel control;
 
 	@Autowired
-	private SourcePollingChannelAdapter adapter;
+	private MessageChannel in;
 
 	@Autowired
-	private TestBean testBean;
-
-	@Autowired
-	private MessageChannel autoChannel;
-
-	@Autowired @Qualifier("autoChannel.adapter")
-	private SourcePollingChannelAdapter autoChannelAdapter;
+	private PollableChannel qux;
 
 	@Test
-	public void pollForAttribute() throws Exception {
-		testBean.test("foo");
-		adapter.start();
-		Message<?> result = channel.receive(1000);
-		assertNotNull(result);
-		assertEquals("foo", result.getPayload());
-	}
-
-	@Test
-	public void testAutoChannel() {
-		assertSame(autoChannel, TestUtils.getPropertyValue(autoChannelAdapter, "outputChannel"));
+	public void test() {
+		control.send(new GenericMessage<String>("@myRouter.setChannelMapping('baz', 'qux')"));
+		Message<?> message = MessageBuilder.withPayload("Hello, world!")
+				.setHeader("routing.header", "baz").build();
+		in.send(message);
+		assertNotNull(qux.receive());
 	}
 
 }

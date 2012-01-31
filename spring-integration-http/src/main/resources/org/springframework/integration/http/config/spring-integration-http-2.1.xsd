@@ -32,11 +32,11 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			<xsd:attribute name="channel" type="xsd:string" use="required">
+			<xsd:attribute name="channel" type="xsd:string">
 				<xsd:annotation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+							<tool:expected-type type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -123,7 +123,7 @@ The String "HTTP_REQUEST_HEADERS" will match against any of the standard HTTP Re
 				<xsd:annotation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+							<tool:expected-type type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -223,7 +223,7 @@ The String "HTTP_REQUEST_HEADERS" will match against any of the standard HTTP Re
 						<xsd:annotation>
 							<xsd:appinfo>
 								<tool:annotation kind="ref">
-									<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+									<tool:expected-type type="org.springframework.integration.MessageChannel" />
 								</tool:annotation>
 							</xsd:appinfo>
 						</xsd:annotation>
@@ -284,11 +284,11 @@ The String "HTTP_REQUEST_HEADERS" will match against any of the standard HTTP Re
 					<xsd:union memberTypes="httpMethodEnumeration xsd:string" />
 				</xsd:simpleType>
 			</xsd:attribute>
-			<xsd:attribute name="channel" type="xsd:string" use="required">
+			<xsd:attribute name="channel" type="xsd:string">
 				<xsd:annotation>
 					<xsd:appinfo>
 						<tool:annotation kind="ref">
-							<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+							<tool:expected-type type="org.springframework.integration.MessageChannel" />
 						</tool:annotation>
 					</xsd:appinfo>
 				</xsd:annotation>
@@ -589,7 +589,7 @@ The String "HTTP_REQUEST_HEADERS" will match against any of the standard HTTP Re
 			<xsd:annotation>
 				<xsd:appinfo>
 					<tool:annotation kind="ref">
-						<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+						<tool:expected-type type="org.springframework.integration.MessageChannel" />
 					</tool:annotation>
 				</xsd:appinfo>
 			</xsd:annotation>
@@ -598,7 +598,7 @@ The String "HTTP_REQUEST_HEADERS" will match against any of the standard HTTP Re
 			<xsd:annotation>
 				<xsd:appinfo>
 					<tool:annotation kind="ref">
-						<tool:expected-type type="org.springframework.integration.core.MessageChannel" />
+						<tool:expected-type type="org.springframework.integration.MessageChannel" />
 					</tool:annotation>
 				</xsd:appinfo>
 			</xsd:annotation>
